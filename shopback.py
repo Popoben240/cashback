@@ -19,7 +19,7 @@ from datetime import date
 def update(value_df):
     sheet_id = '1x4A_IVSNKxa08qvViYp4KuG9Of7UuEbqcWllPk0i7fk'
     sheet_name = 'tripadvisor'
-    gc = gspread.service_account('travel_expense_credential.json')
+    gc = gspread.service_account('cred/travel_expense_credential.json')
     spreadsheet = gc.open_by_key(sheet_id)
     worksheet = spreadsheet.worksheet(sheet_name)
     now_df = pd.DataFrame(worksheet.get_all_records())
