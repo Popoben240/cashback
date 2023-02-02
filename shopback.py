@@ -91,7 +91,7 @@ def get_topcashback():
 # In[ ]:
 
 
-if name = '__main__':
+if __name__ == '__main__':
     raku_df = get_rakuten()
     update(raku_df)
     topcash_df = get_topcashback()
