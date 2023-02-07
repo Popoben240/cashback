@@ -46,6 +46,7 @@ def get_rakuten():
     
     raku_df = pd.DataFrame(list(zip(raku_name,raku_rate)),columns=['name','rate'])
     raku_df["date"] = date.today().strftime('%Y-%m-%d')
+    raku_df["rate"] = raku_df["rate"].apply(lambda x: float(x.strip('%'))*0.01)
     raku_df["source"] = 'Rakuten'
     return raku_df
 
@@ -77,7 +78,7 @@ def get_topcashback():
     df["date"] = date.today().strftime('%Y-%m-%d')
     df["source"] = 'Topcashback'
     df = df[df.name!= 'TripAdvisor Plus Subscription']
-
+    df["rate"] = df["rate"].apply(lambda x: float(x.strip('%'))*0.01)
     df = df.reset_index(drop=True)
     return df
 
