@@ -224,7 +224,7 @@ def get_all_hotels_topcashback():
 # In[ ]:
 
 
-if name = '__main__':
+if __name__ == '__main__':
     hotel_rakuten = get_all_hotels_rakuten()
     update(hotel_rakuten,'hotel')
 
